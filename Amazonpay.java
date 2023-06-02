@@ -6,6 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+//import io.appium.java_client.AppiumDriver;
+//import io.appium.java_client.MobileBy;
+//import io.appium.java_client.MobileElement;
+//import io.appium.java_client.android.AndroidDriver;
+//import java.util.concurrent.TimeUnit;
+
 public class Amazonpay {
 	
 	public static void main(String[] args) throws InterruptedException {
@@ -19,15 +25,37 @@ public class Amazonpay {
 		Thread.sleep(10000);
 		
 		
-		//Login
+		//Login page
 		d.findElement(By.xpath("//a[@class='nav-a nav-a-2   nav-progressive-attribute'][1]")).click();
 		d.findElement(By.xpath("//input[@class='a-input-text a-span12 auth-autofocus auth-required-field']")).sendKeys("+917504808052");
 		d.findElement(By.xpath("//input[@class='a-button-input']")).click();
-		d.findElement(By.xpath("//input[@class='a-input-text a-span12 auth-autofocus auth-required-field']")).sendKeys("*******");
+		d.findElement(By.xpath("//input[@class='a-input-text a-span12 auth-autofocus auth-required-field']")).sendKeys("********");
 		d.findElement(By.xpath("//input[@class='a-button-input'][@id='signInSubmit']")).click();
 		
-		//Sleep for enter the OTP 
-		
+		//Auto enter the OTP 
+		/* 
+		// Desired capabilities
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("deviceName", "my device name");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("appPackage nm", "com.messagingapp.package");
+		capabilities.setCapability("appActivity nm", "com.messagingapp.activity");
+
+		Create the Appium driver and connect mobile device
+		AppiumDriver<MobileElement> appiumDriver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), capabilities);
+
+		// Locate OTP and retrieve the OTP
+		MobileElement otpMessage = appiumDriver.findElement(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"Your OTP\")"));
+		String otpCode = extractOtpFromMessage(otpMessage.getText()); // to extract the OTP from message
+
+		// Close mobile messaging app
+		appiumDriver.closeApp();
+
+		d.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[3]/form/div[7]/span/span/input")).sendKeys(otpCode);
+
+		d.findElement(By.xpath("")).click();
+		appiumDriver.quit();
+		*/
 		Thread.sleep(10000);
 		//d.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[3]/form/div[7]/span/span/input")).click();
 		
